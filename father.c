@@ -91,7 +91,7 @@ int main(int argc, char **argv)
 
     // kill tracee on exit
     if (ptrace(PTRACE_SETOPTIONS, tracee_pid,
-	    NULL, (void *) PTRACE_O_EXITKILL) != 0) {
+	    NULL, (void *) PTRACE_O_TRACEEXIT) != 0) {
         perror("tracer, faile setting PTRACE_O_EXITKILL for tracee\n");
         exit(1);
     }
